@@ -505,11 +505,10 @@ public class Convert {
 
 	void Enum(Api.Enum e, StreamWriter file, Documentation.Constant[]? constants = null) {
 		var prefixLength = Fixer.SharedPrefixLength(e.values.Select(x => x.name).ToArray());
-		if (e.isBitfield != null) {
-			//throw new NotImplementedException();
+		if (e.isBitfield ?? false) {
+			file.WriteLine("\t[Flags]");
 		}
-
-		file.WriteLine($"\tpublic enum {Fixer.Type(e.name)} {{");
+		file.WriteLine($"\tpublic enum {Fixer.Type(e.name)} : long {{");
 		foreach (var v in e.values) {
 			if (constants != null) {
 				var d = constants.FirstOrDefault(x => x.@enum != null && x.@enum == e.name && x.name == v.name);
@@ -580,6 +579,9 @@ public class Convert {
 	}
 
 	string FixDefaultValue(string value, string type) {
+		if (type.StartsWith("typedarray::")) {
+			return "new Array()";
+		}
 		if (value.Contains('(')) { return $"new {value}"; }
 		if (value == "{}") { return "new Dictionary()"; }
 		if (value == "[]") { return "new Array()"; }

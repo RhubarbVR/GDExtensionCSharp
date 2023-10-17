@@ -18,6 +18,8 @@
     <Authors>AntonWetzel</Authors>
 
     <NoWarn>CS1591</NoWarn>
+
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
 </Project>

@@ -90,7 +90,7 @@ public record struct Api {
 
 	public record struct Value {
 		public string name { get; set; }
-		public int value { get; set; }
+		public long value { get; set; }
 	}
 
 	public record struct Enum {

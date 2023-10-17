@@ -1,5 +1,21 @@
-var documentationPath = "../godot/doc/classes/"; //set to null if no godot repository is avaible
-var configName = "float_64";
+
+var currentDir = Directory.GetCurrentDirectory();
+var currentDirDepth = currentDir.Where(x => Path.DirectorySeparatorChar == x).Count();
+var rootPath = currentDir;
+for (var i = 0; i < currentDirDepth; i++) {
+	rootPath = Path.GetFullPath(Path.Combine(rootPath, ".."));
+	if (File.Exists(Path.Combine(rootPath, "GDExtensionCSharp.sln"))) {
+		break;
+	}
+}
+
+if (!File.Exists(Path.Combine(rootPath, "GDExtensionCSharp.sln"))) {
+	throw new Exception("Root not found");
+}
+Directory.SetCurrentDirectory(rootPath);
+
+var documentationPath = "../godot_changes/doc/classes/"; //set to null if no godot repository is avaible
+var configName = "float_32";
 var apiPath = "./BindingGenerator/dump/extension_api.json";
 var dir = "./GDExtension/Generated";
 

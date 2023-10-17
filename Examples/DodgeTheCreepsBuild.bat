@@ -1,0 +1,1 @@
+dotnet publish DodgeTheCreeps/Source/DodgeTheCreeps.csproj -property:GenerateFullPaths=true -consoleloggerparameters:NoSummary -p:NativeLib=Shared --use-current-runtime -o DodgeTheCreeps/Build

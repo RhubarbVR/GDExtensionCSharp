@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Summator": {
+      "commandName": "Project"
+    },
+    "Profile 1": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Projects\\Godot_v4.2-beta1_win64.exe",
+      "workingDirectory": "C:\\Projects\\GDExtensionCSharp\\Examples\\Summator",
+      "nativeDebugging": true
+    }
+  }
+}

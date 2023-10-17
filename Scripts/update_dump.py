@@ -1,6 +1,6 @@
 import os
 
-godot_path = "../godot/bin/godot.windows.editor.dev.x86_64.exe"
+godot_path = "../Godot_v4.2-beta1_win64.exe"
 target_path = "./BindingGenerator/dump/"
 current_path = os.getcwd()
 

@@ -1,12 +1,13 @@
 [configuration]
 
 entry_symbol = "gd_extension_entry"
+compatibility_minimum = 4.2
 
 [libraries]
 
 # macos.debug = "bin/libgdexample.macos.debug.framework"
 # macos.release = "bin/libgdexample.macos.release.framework"
 windows.debug.x86_64 = "Build/Summator.dll"
-# windows.release.x86_64 = "..."
+windows.release.x86_64 = "Build/Summator.dll"
 # linux.debug.x86_64 = "bin/libgdexample.linux.debug.x86_64.so"
 # linux.release.x86_64 = "bin/libgdexample.linux.release.x86_64.so"
